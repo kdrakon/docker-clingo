@@ -5,6 +5,9 @@ A Docker image for the Potassco [clingo](https://github.com/potassco/clingo) sof
 ### Pull the latest image
 `docker pull kdrakon/clingo`
 
+### Build the solver directly from source (https://github.com/potassco/clingo)
+Check out this repo and run: `docker build -t clingo .`
+
 ### Run clingo from Docker
 `docker run -it --rm -v ~/docker-clingo:/tmp kdrakon/clingo:latest clingo -n 2 /tmp/example`
 

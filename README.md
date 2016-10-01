@@ -17,3 +17,4 @@ To play around with clingo and the rest of the suite of tools, just run:
 
 `docker run -it --rm kdrakon/clingo:latest bash`
 
+Binaries for clingo, gringo (grounder), and clasp (solver) are available on the PATH so that they can be executed anywhere on the command line.

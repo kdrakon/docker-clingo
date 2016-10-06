@@ -1,7 +1,6 @@
 % non-monotonicity
-a, b.
-not a :- b.
-not b :- a.
+a :- not b.
+b :- not a.
 
 % choose 1 to 2
 1 { x; y; z } 2.

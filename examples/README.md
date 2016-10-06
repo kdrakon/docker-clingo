@@ -4,7 +4,7 @@
 Run this with `clingo` to see examples of non-monotonicity in ASP.
 
 ## `suduko_rules` and `sudoku_example_game`'s
-This demonstrates how to declaratively define the rules of Sudoku, and in turn, create a solver for the game. `sudoku_example_game1` is an example game depicted below:
+`suduko_rules` demonstrates how to declaratively define the rules of Sudoku, and in turn, create a solver for the game. `sudoku_example_game1` is an example of the game depicted below, where the bold numbers are the initial hints of the game defined in the program:
 
 |       |       |       |       |       |       |       |       |       |
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|

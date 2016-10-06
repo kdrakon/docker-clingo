@@ -1,0 +1,25 @@
+nums(1..9).
+row(N) :- nums(N).
+col(N) :- nums(N).
+
+9 { cell(R, 1..9, 1..9) } 9 :- row(R).
+9 { cell(1..9, C, 1..9) } 9 :- col(C).
+
+:- row(R), nums(N), cell(R, Ca, N), cell(R, Cb, N), Ca!=Cb.
+:- col(C), nums(N), cell(Ra, C, N), cell(Rb, C, N), Ra!=Rb.
+:- row(R), col(C), nums(Na), nums(Nb), cell(R, C, Na), cell(R, C, Nb), Na!=Nb.
+
+cellSum(1, S) :- S = #sum { N : cell(1..3, 1..3, N) }.
+cellSum(2, S) :- S = #sum { N : cell(4..6, 1..3, N) }.
+cellSum(3, S) :- S = #sum { N : cell(7..9, 1..3, N) }.
+cellSum(4, S) :- S = #sum { N : cell(1..3, 4..6, N) }.
+cellSum(5, S) :- S = #sum { N : cell(4..6, 4..6, N) }.
+cellSum(6, S) :- S = #sum { N : cell(7..9, 4..6, N) }.
+cellSum(7, S) :- S = #sum { N : cell(1..3, 7..9, N) }.
+cellSum(8, S) :- S = #sum { N : cell(4..6, 7..9, N) }.
+cellSum(9, S) :- S = #sum { N : cell(7..9, 7..9, N) }.
+:- cellSum(_, AnyCellSum), AnyCellSum!=45.
+
+#show cell/3.
+
+% append games below

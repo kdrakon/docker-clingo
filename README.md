@@ -9,9 +9,9 @@ A Docker image for the Potassco [clingo](https://github.com/potassco/clingo) sof
 Check out this repo and run: `docker build -t clingo .`
 
 ### Run clingo from Docker
-`docker run -it --rm -v ~/docker-clingo:/tmp kdrakon/clingo:latest clingo -n 2 /tmp/example`
+`docker run -it --rm -v ~/docker-clingo:/tmp kdrakon/clingo:latest clingo -n 2 /tmp/examples/nonmontonic`
 
-This mounts the example file from this repo into `/tmp`. Clingo is then executed to solve at most 2 models. 
+This mounts the example file from this repo into `/tmp`. Clingo is then executed to solve at most 2 models. See the [examples](examples) section for more. 
 
 To play around with clingo and the rest of the suite of tools, just run:
 

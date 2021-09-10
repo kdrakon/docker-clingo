@@ -1,6 +1,6 @@
 FROM debian:latest
 
-ENV CLINGO_TAG_VERSION v5.2.2
+ARG tag_version
 
 RUN apt-get update && \
   apt-get install -y git build-essential cmake bison re2c && \
@@ -11,8 +11,10 @@ RUN mkdir /opt/clingo
 RUN cd /opt/clingo && \
   git init && \
   git remote add origin https://github.com/potassco/clingo.git && \
-  git fetch origin ${CLINGO_TAG_VERSION} && \
-  git pull origin ${CLINGO_TAG_VERSION} && \
+  if test -z "$tag_version" ; \
+    then git fetch origin master                && git pull origin master; \
+    else git fetch origin ${tag_version} && git pull origin ${tag_version}; \
+  fi && \
   git submodule update --init --recursive
 
 WORKDIR /opt/clingo
